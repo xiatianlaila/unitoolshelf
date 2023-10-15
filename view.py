@@ -1,9 +1,27 @@
 import sys
-import Qt.QtWidgets as QtWidgets
+from Qt.QtWidgets import QApplication, QDockWidget
 
-app = QtWidgets.QApplication(sys.argv)
-#label = QLabel("Hello World!")
-label = QtWidgets.QLabel("<font color=red size=40>Hello World!</font>")
-label.resize(400, 300)
-label.show()
-app.exec_()
+
+class UniToolShelf(QDockWidget):
+    def __init__(self, parent=None):
+        super(UniToolShelf, self).__init__(parent)
+
+        self.widget_init()
+        self.layout_init()
+        self.connect_init()
+
+    def widget_init(self):
+        pass
+
+    def layout_init(self):
+        pass
+
+    def connect_init(self):
+        pass
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    uni_tool_shelf = UniToolShelf()
+    uni_tool_shelf.show()
+    app.exec_()
